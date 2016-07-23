@@ -276,8 +276,6 @@ ngx_rtmp_dash_write_playlist(ngx_rtmp_session_t *s)
                    "urn:mpeg:dash:profile:isoff-live:2011\"\n"                 \
     "    xmlns:xsi=\"http://www.w3.org/2011/XMLSchema-instance\"\n"            \
     "    xsi:schemaLocation=\"urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd\">\n" \
-    "  <UTCTiming schemeIdUri=\"urn:mpeg:dash:utc:http-head:2014\"\n"          \
-    "       value=\"http://vm2.dashif.org/dash/time.txt\" />"                  \
     "  <Period start=\"PT0S\" id=\"dash\">\n"
 
 
@@ -287,6 +285,7 @@ ngx_rtmp_dash_write_playlist(ngx_rtmp_session_t *s)
     "        segmentAlignment=\"true\"\n"                                      \
     "        maxWidth=\"%ui\"\n"                                               \
     "        maxHeight=\"%ui\"\n"                                              \
+    "        par=\"16:9\"\n"                                                   \
     "        maxFrameRate=\"%s\">\n"                                           \
     "      <Representation\n"                                                  \
     "          id=\"%V_H264\"\n"                                               \
