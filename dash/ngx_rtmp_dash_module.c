@@ -274,7 +274,7 @@ ngx_rtmp_dash_write_playlist(ngx_rtmp_session_t *s)
     "    suggestedPresentationDelay=\"PT%uiS\"\n"                              \
     "    profiles=\"urn:hbbtv:dash:profile:isoff-live:2012,"                   \
                    "urn:mpeg:dash:profile:isoff-live:2011\"\n"                 \
-    "    xmlns:xsi=\"http://www.w3.org/2011/XMLSchema-instance\"\n"            \
+    "    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"            \
     "    xsi:schemaLocation=\"urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd\">\n" \
     "  <Period start=\"PT0S\" id=\"dash\">\n"
 
@@ -297,18 +297,18 @@ ngx_rtmp_dash_write_playlist(ngx_rtmp_session_t *s)
     "          sar=\"1:1\"\n"                                                  \
     "          startWithSAP=\"1\"\n"                                           \
     "          bandwidth=\"%ui\">\n"                                           \
-    "        <SegmentTemplate\n"                                               \
-    "            presentationTimeOffset=\"0\"\n"                               \
-    "            timescale=\"1000\"\n"                                         \
-    "            media=\"%V%s$Time$.m4v\"\n"                                   \
-    "            initialization=\"%V%sinit.m4v\">\n"                           \
-    "          <SegmentTimeline>\n"
+    "      </Representation>\n"                                                \
+    "      <SegmentTemplate\n"                                               \
+    "          presentationTimeOffset=\"0\"\n"                               \
+    "          timescale=\"1000\"\n"                                         \
+    "          media=\"%V%s$Time$.m4v\"\n"                                   \
+    "          initialization=\"%V%sinit.m4v\">\n"                           \
+    "        <SegmentTimeline>\n"
 
 
 #define NGX_RTMP_DASH_MANIFEST_VIDEO_FOOTER                                    \
-    "          </SegmentTimeline>\n"                                           \
-    "        </SegmentTemplate>\n"                                             \
-    "      </Representation>\n"                                                \
+    "        </SegmentTimeline>\n"                                           \
+    "      </SegmentTemplate>\n"                                             \
     "    </AdaptationSet>\n"
 
 
